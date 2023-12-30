@@ -41,11 +41,11 @@ export default function Home() {
           if((index+1)%3===0){
             return (<div className={styles.endbox} onClick={()=>{
               processInput(index);
-            }}>{item===-1?"":item}</div>)
+            }}>{item===-1?"":(item===1?'X':'O')}</div>)
           } else {
             return (<div className={styles.inbox} onClick = {()=>{
               processInput(index);
-            }}>{item===-1?"":item}</div>)
+            }}>{item===-1?"":(item===1?'X':'O')}</div>)
           }
         })}
       </div>
@@ -54,7 +54,7 @@ export default function Home() {
         setGameOver(false);
         setTurn(0);
       }}><button>Reset</button></div>
-      <div className={GameOver?styles.win:styles.hide}>{turn} Won</div>
+      <div className={GameOver?styles.win:styles.hide}>{turn===1?'X':'O'} Won</div>
     </main>
   )
 }
